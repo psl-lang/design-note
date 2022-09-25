@@ -10,6 +10,7 @@ PS를 위한 프로그래밍 언어를 다같이 설계해봅시다
 ## 언급된 사항들
 
 - C++ 혹은 C를 타겟으로 하는 source-to-source compiler
+  - C++ 타겟으로 하면 장점: AtCoder Library나 기타 굇수들의 라이브러리 손쉽게 포팅 가능
 - Python만큼 쉬워야 함
 - 정적 타입 사용
 - C++보다는 느리지만 Python보단 나은 성능을 목표
