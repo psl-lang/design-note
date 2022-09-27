@@ -1,4 +1,4 @@
-# design-note
+# psl-lang/design-note
 
 PS를 위한 프로그래밍 언어를 다같이 설계해봅시다
 
@@ -7,6 +7,8 @@ PS를 위한 프로그래밍 언어를 다같이 설계해봅시다
 - 변수 선언 -> [변수 선언](./syntax/variable-declaration.md)
 - 입출력 형식 편하게 하기 -> [형식 지정자](./syntax/format-specifier.md), [표준 입출력](./syntax/stdio.md)
 - 특정 문제를 해결하며 문법 디자인해보기 -> [psl-lang/snippets](https://github.com/psl-lang/snippets)
+- 세미콜론은 Python/Kotlin처럼 안 쓰는 게 기본이지만 한 줄 코딩에 "쓸 수는 있음"
+- 이름은 PSL(PS Language)로 결정
 
 ## 언급된 사항들
 
@@ -24,8 +26,6 @@ PS를 위한 프로그래밍 언어를 다같이 설계해봅시다
 - 베열 선언 numpy reshape?
 - 정수 자료형은 i32 i64 ibig만?
 - 자료 구조 시각적 디버거
-- github 조직 팠음 :white_check_mark:
-  - 이름 뭐로 하죠? psl? psudo? ips? 추가 아이디어 받아요
 - 개발은 kiwiyou가 주로? 문서화는 누가 할까요
 - 타입 추론 구현 어려울까요? -> 일단은 안 하는 방향?
 - 연산자 우선순위
