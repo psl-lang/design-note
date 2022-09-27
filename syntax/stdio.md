@@ -30,6 +30,7 @@ while read `{n}` { ... }
 
 ```
 // EOFError가 뜨면 break하는 무한 반복문
+// FormatError는 처리하지 않아 throw된다
 loop  {
     i32 n
     read `{n}` catch EOFError { break }
