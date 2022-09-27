@@ -1,6 +1,6 @@
-# 결과 타입 (T!)
+# 실패 가능성 타입 (fallible)
 
-결과 타입은 `성공(T 값)`이거나 `실패(예외 정보)`인 타입이다. 결과 값은 다음 규칙에 따라 해석한다.
+실패 가능성 타입은 `성공`이거나 `실패(예외 정보)`이다. 결과 값은 다음 규칙에 따라 해석한다.
 
 1. bool로 변환할 경우:
     결과 값이 성공일 경우 true로, 실패일 경우 false로 변환한다.
@@ -22,15 +22,13 @@ throw되는 동작의 경우 바깥의 try ~ catch 구문이 있다면 예외를
 ## 예시
 
 ```
-// 생각해볼 점: T!가 bool이 되는 동작(1)과 T!가 T가 되는 동작(3)이 헷갈리지는 않는지?
 // 1의 경우
-i32! i = some_fallible_operation()
-if i { /* 실패하지 않았으니 i 사용 */ } else { /* 실패 */ }
+if some_fallible_operation() { /* 성공 */ } else { /* 실패 */ }
 
 // 2의 경우
-i32 i = some_fallible_operation() catch { exit(0) }
-i32 i = some_fallible_operation() catch Failure { value_only_in_failure } // TODO: 넣을지, 지금 문법으로 넣을지
+some_fallible_operation() catch { exit(0) }
+some_fallible_operation() catch Failure { work_only_in_failure_type() }
 
-// 3의 경우, 실패한 경우 throw, 성공한 경우 그냥 i32
-i32 i = some_fallible_operation()
+// 3의 경우, 실패라면 throw, 아니면 그냥 실행
+some_fallible_operation()
 ```
